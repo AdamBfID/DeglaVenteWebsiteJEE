@@ -126,18 +126,7 @@
             color: #7e4e23;
         }
 
-        .search-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(126, 78, 35, 0.08);
-            margin-bottom: 30px;
-        }
-
-        .search-form {
-            display: flex;
-            gap: 15px;
-        }
+ 
 
         .search-input {
             flex: 1;
@@ -393,16 +382,11 @@
         <main class="main-content">
             <div class="page-header">
                 <h1>Gestion des Clients</h1>
-                <div class="user-info">
-                    <img src="${pageContext.request.contextPath}/images/admin-avatar.jpg"
-                         alt="Admin"
-                         onerror="this.onerror=null;this.src='${pageContext.request.contextPath}/images/default-avatar.jpg';">
-                    <span>Admin</span>
-                </div>
+              
             </div>
 
             <!-- Search Section -->
-            <div class="search-container">
+            <div class="">
                 <form class="search-form" action="${pageContext.request.contextPath}/admin/clients" method="GET">
                     <input type="text" name="search" class="search-input" placeholder="Rechercher par nom, email ou rôle..." value="${param.search}">
                     <button type="submit" class="search-btn">
@@ -410,7 +394,7 @@
                     </button>
                 </form>
             </div>
-
+			<br></br>
             <!-- Users Table -->
             <div class="data-card">
                 <h2>

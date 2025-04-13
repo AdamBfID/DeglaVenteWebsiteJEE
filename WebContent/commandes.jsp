@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <jsp:include page="/WEB-INF/views/includes/header.jsp"/>
+
 <%@ page import="java.util.List" %> 
 <%@ page import="model.Commande" %> 
 <%@ page import="model.Utilisateur" %> 
@@ -10,7 +10,7 @@
 <head>     
     <meta charset="UTF-8">     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">     
-    <title>Gestion des Commandes - Delicio</title>
+    <title>Gestion des Commandes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -128,14 +128,7 @@
             color: #7e4e23;
         }
 
-        .search-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(126, 78, 35, 0.08);
-            margin-bottom: 30px;
-        }
-
+      
         .search-form {
             display: flex;
             flex-wrap: wrap;
@@ -455,18 +448,13 @@
         <main class="main-content">
             <div class="page-header">
                 <h1>Gestion des Commandes</h1>
-                <div class="user-info">
-                    <img src="${pageContext.request.contextPath}/images/admin-avatar.jpg"
-                         alt="Admin"
-                         onerror="this.onerror=null;this.src='${pageContext.request.contextPath}/images/default-avatar.jpg';">
-                    <span>Admin</span>
-                </div>
+                
             </div>
 
             <!-- Search Section -->
-            <div class="search-container">
+            <div class="">
                 <form class="search-form" action="${pageContext.request.contextPath}/admin/orders" method="GET">
-                    <div class="form-group">
+                    <div class="">
                         <label class="form-label">ID Commande</label>
                         <input type="text" name="orderId" class="search-input" placeholder="Rechercher par ID..." value="${param.orderId}">
                     </div>
@@ -488,10 +476,10 @@
                     </div>
                     
                     <div class="form-group">
-                        <label class="form-label">Période</label>
+                        <label class="form-label">Date</label>
                         <div class="date-inputs">
                             <input type="date" name="dateFrom" class="search-input" value="${param.dateFrom}">
-                            <input type="date" name="dateTo" class="search-input" value="${param.dateTo}">
+                            
                         </div>
                     </div>
                     
@@ -500,7 +488,7 @@
                     </button>
                 </form>
             </div>
-
+<br/><br/>
             <!-- Orders Table -->
             <div class="data-card">
                 <h2>

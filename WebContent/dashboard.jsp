@@ -366,7 +366,7 @@
                 </div>
                 <div class="menu-item">
                     <i class="fas fa-box"></i>
-                    <span>Les dattes:</span>
+                    <span>Les dattes</span>
                 </div>
                 <div class="menu-item">
                     <i class="fas fa-shopping-cart"></i>
@@ -393,12 +393,7 @@
         <main class="main-content">
             <div class="page-header">
                 <h1>Dashboard</h1>
-                <div class="user-info">
-                    <img src="images/${produit.image}"
-                         alt="Admin"
-                         onerror="this.onerror=null;this.src='${pageContext.request.contextPath}/images/default-avatar.jpg';">
-                    <span>Admin</span>
-                </div>
+                
             </div>
 
             <!-- Statistics Cards -->
@@ -438,7 +433,7 @@
                             int pendingOrders = 0;
                             if (commandes != null) {
                                 for (Commande commande : commandes) {
-                                    if ("pending".equalsIgnoreCase(commande.getStatut())) {
+                                    if ("en attente".equalsIgnoreCase(commande.getStatut())) {
                                         pendingOrders++;
                                     }
                                 }
@@ -473,7 +468,7 @@
                                     <c:forEach var="produit" items="${produits}" begin="0" end="4">
                                         <tr>
                                             <td>
-                                                <img src="images/${produit.image}" 
+                                                <img src="${pageContext.request.contextPath}/images/${produit.image}" 
                                                      alt="${produit.nom}" 
                                                      class="product-image"
                                                      onerror="this.onerror=null;this.src='${pageContext.request.contextPath}/images/default_product.jpg';">
